@@ -10,14 +10,14 @@
   },
   "type": "module",
   "exports": {
-    "import": "./dist/react-daisyui.modern.js",
-    "require": "./dist/react-daisyui.cjs",
-    "default": "./dist/react-daisyui.modern.js",
-    "types": "./dist/index.d.ts"
+    "import": "./dist/esm/index.js",
+    "require": "./dist/cjs/index.cjs",
+    "default": "./dist/esm/index.js",
+    "types": "./dist/esm/index.d.ts"
   },
-  "main": "./dist/react-daisyui.cjs",
-  "module": "./dist/react-daisyui.esm.js",
-  "unpkg": "./dist/react-daisyui.umd.js",
+  "main": "./dist/cjs/index.cjs",
+  "module": "./dist/esm/index.js",
+  "unpkg": "./dist/esm/index.js",
   "sideEffects": false,
   "files": [
     "dist"
@@ -26,6 +26,7 @@
   "scripts": {
     "start": "storybook dev -p 6006",
     "dist": "microbundle --jsx React.createElement --jsxFragment React.Fragment --jsxImportSource react --globals react/jsx-runtime=jsx --format modern,cjs,esm --css inline --compress false",
+    "dist-tsc": "tsc --outDir dist/esm --target esnext && tsc --outDir dist/cjs --target esnext --module commonjs",
     "docs": "storybook build -o ./docs -s ./public",
     "test": "jest",
     "format": "prettier --write ./src",

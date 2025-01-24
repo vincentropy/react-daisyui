@@ -1,6 +1,5 @@
 {
   "compilerOptions": {
-    "target": "es2020",
     "useDefineForClassFields": true,
     "lib": ["DOM", "DOM.Iterable", "ESNext"],
     "allowJs": false,
@@ -13,10 +12,12 @@
     "moduleResolution": "Node",
     "resolveJsonModule": true,
     "isolatedModules": true,
-    "noEmit": true,
+    "noEmit": false,
+    "declaration": true, // emit type definitions
     "jsx": "react-jsx",
     "jsxFactory": "",
-    "jsxFragmentFactory": ""
+    "jsxFragmentFactory": "",
+    "rootDir": "./src"
   },
   "include": ["./src"],
   "exclude": ["./src/**/*.stories.tsx"]
