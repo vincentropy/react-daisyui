@@ -33,7 +33,8 @@
     "prepublishOnly": "npm run dist",
     "postpublish": "git push --no-verify && git push --tags",
     "version": "npm run docs && git add -A docs",
-    "generate": "plop"
+    "generate": "plop",
+    "prepare": "npm run dist-tsc"
   },
   "peerDependencies": {
     "daisyui": "^4.12.10",
